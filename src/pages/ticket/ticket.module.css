@@ -1,0 +1,243 @@
+.container {
+    width: calc(100vw - 16rem);
+    text-align: center;
+    font-weight: 200;
+    margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: calc(100vw - 5rem) !important;
+    }
+    .replies {
+        display: none;
+    }
+    .holder {
+        flex-direction: column;
+    }
+}
+
+.main {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.form,
+.tickets {
+    background-color: #141418;
+    border-radius: 25px;
+    margin: 1%;
+    padding: 1.5em;
+    flex: 1;
+}
+
+@media screen and (min-width: 768px) {
+
+    .form,
+    .tickets {
+        padding: 2.5em;
+    }
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 28px;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.smallGroup {
+    display: flex;
+    align-items: baseline;
+}
+
+@media screen and (min-width: 700px) {
+    .largeGroup {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .smallGroup {
+        width: 100%;
+    }
+}
+
+label {
+    display: block;
+    margin: 15px;
+    width: 32px;
+    min-width: 32px;
+}
+
+.input,
+.select {
+    padding: 10px 16px;
+    width: 100%;
+    outline: 0;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: 0;
+    background-color: #ededed;
+    font-size: 14px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.textareaDiv {
+    display: flex;
+    width: 100%;
+}
+
+textarea {
+    padding: 10px;
+    width: 100%;
+    outline: 0;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    resize: none;
+    border: 0;
+    background-color: #ededed;
+    font-size: 14px;
+    height: 100px;
+}
+
+.btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding: 12px 15px;
+    width: 100%;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    transition: 0.3s all ease;
+}
+
+.holder {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputLogin {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+
+.inputPrependLogin {
+    margin-right: -1px;
+}
+
+.inputPrependLogin {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.inputLogin>.customSelect:not(:first-child),
+.inputLogin>.formControlLogin:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.inputLogin>.customFile,
+.input>.customSelect,
+.inputLogin>.formControlLogin,
+.inputLogin>.formControlTextarea {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 15px 30px;
+    width: 1%;
+    margin: 5px;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.js .inputFileTrigger {
+    display: block;
+    padding: 14px 45px;
+    background: var(--color-grass);
+    color: #333;
+    font-size: 1em;
+    transition: all .4s;
+    cursor: pointer;
+    border-radius: 50px;
+    width: 100%;
+    margin: 0;
+}
+
+.js .inputFile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    padding: 14px 0;
+    cursor: pointer;
+}
+
+.js .inputFile:hover+.inputFileTrigger,
+.js .inputFile:focus+.inputFileTrigger,
+.js .inputFileTrigger:hover,
+.js .inputFileTrigger:focus {
+    background: var(--color-alge);
+    color: var(--color-dark);
+}
+
+.js .inputFileTriggerHover {
+    background: #ff0000;
+    color: var(--color-dark);
+}
+
+.inputFileContainer {
+    display: flex;
+    align-items: center;
+}
+
+.fileReturn {
+    margin: 0;
+}
+
+.fileReturn:not(:empty) {
+    margin: 1em 0;
+}
+
+.js .fileReturn {
+    font-style: italic;
+    font-size: .9em;
+    font-weight: bold;
+    margin: 20px auto -10px;
+}
+
+.js .fileReturn:not(:empty):before {
+    content: "Selected file: ";
+    font-style: normal;
+    font-weight: normal;
+}
+
+.ticket {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+}
