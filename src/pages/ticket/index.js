@@ -34,7 +34,7 @@ const Ticket = () => {
     e.preventDefault();
     const imagefile = document.querySelector('input[type="file"]');
     await Axios({
-      method: "post",
+      method: "POST",
       url: `${config.backendURL}/tickets`,
       data: { ...inputs, attachments: [...imagefile.files] },
       headers: { "Content-Type": "multipart/form-data" },
@@ -170,7 +170,7 @@ const Ticket = () => {
                         }
                       );
                       return (
-                        <Link to={`/viewticket/${ticket._id}`}>
+                        <Link to={`/viewticket/${ticket.id}`} key={ticket.id}>
                           <div className={styles.ticket} key={key}>
                             <span style={{ color: status }}>
                               <FontAwesomeIcon icon={["fas", "circle"]} />

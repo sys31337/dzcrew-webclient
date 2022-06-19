@@ -1,0 +1,321 @@
+.commentSection {
+    list-style: none;
+    max-width: 800px;
+    width: 100%;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+}
+
+.comment {
+    display: flex;
+    border-radius: 3px;
+    flex-wrap: wrap;
+}
+
+.comment.userComment {
+    color: #808080;
+    margin: 20px 0;
+}
+
+.comment.staffComment {
+    color: #60686d;
+    justify-content: flex-end;
+}
+
+/* User and time info */
+
+.comment .info {
+    width: 17%;
+}
+
+.comment.userComment .info {
+    text-align: right;
+}
+
+.comment.staffComment .info {
+    order: 3;
+}
+
+
+.comment .info a {
+    /* User name */
+    display: block;
+    text-decoration: none;
+    color: #656c71;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0 3px 0;
+}
+
+.comment .info span {
+    /* Time */
+    font-size: 11px;
+    color: #9ca7af;
+}
+
+
+/* The user avatar */
+
+.comment .avatar {
+    align-self: center;
+}
+
+.comment .avatar img {
+    display: block;
+    border-radius: 50%;
+}
+
+.comment.userComment .avatar img {
+    float: right;
+}
+
+.comment.staffComment .avatar {
+    order: 2;
+    padding: 10px 3px 0 18px;
+}
+
+/* The comment text */
+
+.comment p {
+    line-height: 1.5;
+    font-size: 12pt;
+    width: calc(100% - 130px);
+    position: relative;
+    word-wrap: break-word;
+    border-radius: 10px;
+}
+
+.comment.userComment p {
+    background-color: #f3f3f3;
+}
+
+.comment.staffComment p {
+    background-color: rgb(211 157 42 / 16%);
+    order: 1;
+}
+
+.ticketStarter {
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    line-height: 1.2rem;
+    font-size: 8pt;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: var(--color-salmon);
+    color: #000;
+    left: 8px;
+    top: 8px;
+    margin: 5px;
+}
+
+.staffReplyInfo {
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    line-height: 1.2rem;
+    font-size: 8pt;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: var(--color-main);
+    color: #000;
+    left: 8px;
+    top: 8px;
+    margin: 5px;
+}
+
+.playerInfoName {
+    text-align: center;
+    font-size: 12pt;
+    font-weight: 500;
+    color: #000;
+    left: 8px;
+    top: 8px;
+    margin: 5px 0;
+}
+
+.badgeHolder {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    line-height: 1.2rem;
+    font-size: 8pt;
+    font-weight: 500;
+    border-radius: 5px;
+    color: #000;
+    right: 8px;
+    top: 8px;
+    text-transform: uppercase;
+}
+
+/* Comment form */
+
+.writeNew {
+    width: 100%;
+}
+
+.writeNew textarea {
+    padding: 10px 5px;
+    color: #444;
+    font: inherit;
+    outline: 0;
+    border-radius: 10px;
+    border: 1px solid #cecece;
+    background-color: #fefefe;
+    box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.06);
+    overflow: auto;
+    width: 100%;
+    min-height: 80px;
+}
+
+.writeNew img {
+    border-radius: 50%;
+    margin-top: 15px;
+}
+
+.writeNew button {
+    float: right;
+    background-color: #87bae1;
+    box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 2px;
+    border: 0;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+
+    padding: 10px 25px;
+    margin-top: 18px;
+}
+
+
+
+/* Responsive styles */
+
+@media (max-width: 800px) {
+
+    /* Make the paragraph in the comments take up the whole width,
+    forcing the avatar and user info to wrap to the next line*/
+    .comment p {
+        width: 100%;
+    }
+
+    /* Reverse the order of elements in the user comments,
+    so that the avatar and info appear after the text. */
+    .comment.userComment .info {
+        order: 3;
+        text-align: left;
+    }
+
+    .comment.userComment .avatar {
+        order: 2;
+    }
+
+    .comment.userComment p {
+        order: 1;
+    }
+
+
+    /* Align toward the beginning of the container (to the left)
+    all the elements inside the author comments. */
+    .comment.staffComment {
+        justify-content: flex-start;
+    }
+
+
+    .commentSection {
+        margin-top: 10px;
+    }
+
+    .comment .info {
+        width: auto;
+    }
+
+    .comment .info a {
+        padding-top: 15px;
+    }
+
+    .comment.userComment .avatar,
+    .comment.staffComment .avatar {
+        padding: 15px 10px 0 18px;
+        width: auto;
+    }
+
+    .comment.userComment p:after,
+    .comment.staffComment p:after {
+        width: 12px;
+        height: 12px;
+        top: initial;
+        left: 28px;
+        bottom: -6px;
+    }
+
+    .writeNew {
+        width: 100%;
+    }
+}
+
+.contentContainer {
+    width: 100%;
+    display: flex;
+    background: #f8f8f8;
+    padding: 25px 0;
+    border-radius: 10px;
+    justify-content: space-around;
+}
+
+.staffContentContainer {
+    width: 100%;
+    display: flex;
+    background: #f8f8f8;
+    padding: 25px 0;
+    border-radius: 10px;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+}
+
+.playerInfo {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-primary);
+    padding: 15px;
+    margin: 0 30px;
+    border-radius: 15px;
+}
+
+.staffCommentContent{
+    margin: 0 -10px 0 25px;
+    padding: 10px;
+}
+
+.commentContent{
+    margin: 0 25px 0 -10px;
+    padding: 10px;
+}
+
+.firstContainer {
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
