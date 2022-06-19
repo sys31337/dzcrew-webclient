@@ -86,7 +86,7 @@
 
 .comment.staffComment .avatar {
     order: 2;
-    padding: 10px 3px 0 18px;
+    padding: 10px 0;
 }
 
 /* The comment text */
@@ -133,12 +133,12 @@
     font-size: 8pt;
     text-transform: uppercase;
     font-weight: 500;
-    border-radius: 5px;
+    border-radius: 25px;
     background-color: var(--color-main);
     color: #000;
     left: 8px;
     top: 8px;
-    margin: 5px;
+    margin: 5px auto;
 }
 
 .playerInfoName {
@@ -188,7 +188,7 @@
 
 .writeNew img {
     border-radius: 50%;
-    margin-top: 15px;
+    vertical-align: middle;
 }
 
 .writeNew button {
@@ -200,9 +200,7 @@
     color: #ffffff;
     font-weight: bold;
     cursor: pointer;
-
     padding: 10px 25px;
-    margin-top: 18px;
 }
 
 
@@ -297,6 +295,7 @@
     background-color: var(--bg-primary);
     padding: 15px;
     margin: 0 30px;
+    height: 140px;
     border-radius: 15px;
 }
 
@@ -318,4 +317,8 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.playerInfoContainer {
+    width: 33%;
 }
