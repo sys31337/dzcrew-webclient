@@ -1,8 +1,10 @@
-import axios from "axios";
+import Axios from "axios";
+import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Layout from "../../components/layout";
 import styles from "./viewticket.module.css";
+import config from "../../config.json";
 
 
 const ViewTicket = () => {
@@ -13,9 +15,18 @@ const ViewTicket = () => {
     const { id } = useParams();
     const [ticket, setTicket] = useState({});
     const [isFound, setIsFound] = useState(false);
+
     const [sender, setSender] = useState({});
+    const [inputs, setInputs] = useState({});
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+        setInputs((values) => ({ ...values, [name]: value }));
+    };
+
     useEffect(() => {
-        axios.get(`http://45.146.254.137:3001/api/tickets/${id}`, {
+        Axios.get(`http://45.146.254.137:3001/api/tickets/${id}`, {
             withCredentials: true,
         }).then((res) => {
             if (res.data) {
@@ -27,11 +38,38 @@ const ViewTicket = () => {
         }
         );
     }, [id]);
+
+    const submitReply = async (e) => {
+        e.preventDefault();
+        const data = inputs;
+        await Axios({
+            method: "PATCH",
+            url: `${config.backendURL}/tickets/${id}`,
+            data,
+            headers: { "Content-Type": "multipart/form-data" },
+            withCredentials: true,
+        }).then(() => {
+            Swal.fire({
+                title: "Reply added successfully",
+                icon: "success",
+                confirmButtonText: "Ok",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementsByTagName("form")[0].reset();
+                }
+            });
+        })
+    }
+
     return (
         isFound ?
             <Layout>
                 <div className={styles.container}>
                     <ul className={styles.commentSection}>
+                        <div className={styles.ticketInformation}>
+                            <p><span>ID:</span> #{id}</p>
+                            <p><span>Creator:</span> {sender.username}</p>
+                        </div>
                         <li className={`${styles.comment} ${styles.userComment}`}>
                             <div className={`${styles.contentContainer} ${styles.firstContainer}`}>
                                 <div className={styles.playerInfoContainer}>
@@ -61,7 +99,7 @@ const ViewTicket = () => {
                                             </div>
                                             <p className={styles.staffCommentContent}>
                                                 Greetings <b>{sender.username},</b> <br /><br />
-                                                {ticket.message}<br /><br />
+                                                {reply.message}<br /><br />
                                                 Sincerely.<br />
                                                 <b>Dz-Crew RolePlay Staff</b>
                                             </p>
@@ -85,11 +123,16 @@ const ViewTicket = () => {
 
                         <h3>Write a reply:</h3>
                         <li className={styles.writeNew}>
-                            <form action="/" method="post">
-                                <textarea placeholder="Write your comment here" name="comment"></textarea>
-                                <div>
-                                    <img src={profilePicture} width="35" alt={username} title={username} /> {username}
-                                    <button type="submit">Submit</button>
+                            <form onSubmit={submitReply}>
+                                <textarea placeholder="Write your comment here" onChange={handleChange} name="comment"></textarea>
+                                <div className={styles.commentFooter}>
+                                    <div>
+                                        <img src={profilePicture} width="64px" alt={username} title={username} /> {username}
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="close" onChange={handleChange} /><span>Close Ticket</span>
+                                        <button type="submit">Submit</button>
+                                    </div>
                                 </div>
                             </form>
                         </li>
