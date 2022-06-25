@@ -2,6 +2,8 @@ import Axios from "axios";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import moment from 'moment';
+
 import Layout from "../../components/layout";
 import styles from "./viewticket.module.css";
 import config from "../../config.json";
@@ -19,6 +21,8 @@ const ViewTicket = () => {
     const [sender, setSender] = useState({});
     const [inputs, setInputs] = useState({});
 
+    const [refreshData, setRefreshData] = useState(false);
+
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
@@ -26,18 +30,17 @@ const ViewTicket = () => {
     };
 
     useEffect(() => {
-        Axios.get(`http://45.146.254.137:3001/api/tickets/${id}`, {
+        Axios.get(`${config.backendURL}/tickets/${id}`, {
             withCredentials: true,
         }).then((res) => {
             if (res.data) {
-                console.log(res.data)
                 setTicket(res.data);
                 setSender(res.data.sender)
                 setIsFound(true);
             }
         }
         );
-    }, [id]);
+    }, [id, refreshData]);
 
     const submitReply = async (e) => {
         e.preventDefault();
@@ -48,7 +51,8 @@ const ViewTicket = () => {
             data,
             headers: { "Content-Type": "multipart/form-data" },
             withCredentials: true,
-        }).then(() => {
+        }).then((res) => {
+            setRefreshData(!refreshData);
             Swal.fire({
                 title: "Reply added successfully",
                 icon: "success",
@@ -67,7 +71,9 @@ const ViewTicket = () => {
                 <div className={styles.container}>
                     <ul className={styles.commentSection}>
                         <div className={styles.ticketInformation}>
+                            <p><span>Subject:</span> {ticket.subject}</p>
                             <p><span>ID:</span> #{id}</p>
+                            <p><span>Date:</span> {moment(ticket.createdAt).format('D/MM/Y, h:mm:ss a')}</p>
                             <p><span>Creator:</span> {sender.username}</p>
                         </div>
                         <li className={`${styles.comment} ${styles.userComment}`}>
@@ -115,27 +121,31 @@ const ViewTicket = () => {
                                                     <span className={styles.ticketStarter}>Starter</span>
                                                 </div>
                                             </div>
-                                            <p className={styles.commentContent}>{ticket.message}</p>
+                                            <p className={styles.commentContent}>{reply.message}</p>
                                         </div>
                                     </li>
                             )
                         })}
-
-                        <h3>Write a reply:</h3>
-                        <li className={styles.writeNew}>
-                            <form onSubmit={submitReply}>
-                                <textarea placeholder="Write your comment here" onChange={handleChange} name="comment"></textarea>
-                                <div className={styles.commentFooter}>
-                                    <div>
-                                        <img src={profilePicture} width="64px" alt={username} title={username} /> {username}
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="close" onChange={handleChange} /><span>Close Ticket</span>
-                                        <button type="submit">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </li>
+                        {ticket.status === 'processed' ?
+                            <center><h4> Ticket closed </h4></center>
+                            :
+                            <>
+                                <h3>Write a reply:</h3><li className={styles.writeNew}>
+                                    <form onSubmit={submitReply}>
+                                        <textarea placeholder="Write your comment here" onChange={handleChange} name="comment"></textarea>
+                                        <div className={styles.commentFooter}>
+                                            <div>
+                                                <img src={profilePicture} width="64px" alt={username} title={username} /> {username}
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" name="close" onChange={handleChange} /><span>Close Ticket</span>
+                                                <button type="submit">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </li>
+                            </>
+                        }
                     </ul>
                 </div>
             </Layout >

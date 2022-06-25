@@ -339,9 +339,10 @@
 
 .ticketInformation>p {
     width: 50%;
+    margin: 5px 0;
 }
 
-.ticketInformation>p:last-of-type {
+.ticketInformation>p:nth-child(2n) {
     text-align: right;
 }
 
