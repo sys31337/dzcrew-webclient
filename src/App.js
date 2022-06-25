@@ -5,6 +5,7 @@ import Error from "./pages/error";
 import Ticket from "./pages/ticket";
 import ViewTicket from "./pages/viewticket";
 import Dashboard from "./pages/dashboard";
+import Rules from "./pages/rules";
 import Form from "./pages/form";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/ticket" element={<Ticket />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/rules" element={<Rules />} />
           <Route path="/form" element={<Form />} />
           <Route path="/viewticket/:id" element={<ViewTicket />} />
           <Route path="*" element={<Error />} />
