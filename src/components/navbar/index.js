@@ -73,13 +73,13 @@ const Navbar = () => {
         console.log(err);
       });
 
-    axios.get(config.players).then((res) => {
+    axios.get(config.players, { insecureHTTPParser: true }).then((res) => {
       setPlayersCount(res.data.length);
     });
-    axios.get(`//ip-api.com/json/${config.serverIP}`).then((res) => {
+    axios.get(`http://ip-api.com/json/${config.serverIP}`).then((res) => {
       setServerLocation(res.data.countryCode);
     });
-    axios.get(config.server).then((res) => {
+    axios.get(config.server, { insecureHTTPParser: true }).then((res) => {
       if (res.data) {
         setServerIsOnline(res.data.server.length > 0);
         setServerResources(res.data.resources.length);
@@ -104,9 +104,8 @@ const Navbar = () => {
       <div className={styles.sideNav}>
         <input type="checkbox" className={styles.toggle} id="toggle" />
         <label
-          className={`${styles.serverStatus} ${
-            serverIsOnline ? "color-success" : "color-danger"
-          }`}
+          className={`${styles.serverStatus} ${serverIsOnline ? "color-success" : "color-danger"
+            }`}
           htmlFor="toggle"
         >
           <FontAwesomeIcon icon="fa-solid fa-exclamation" />
@@ -121,7 +120,7 @@ const Navbar = () => {
               <p>
                 Location:{" "}
                 <img
-                  src={`//flagpedia.net/data/flags/icon/16x12/${serverLocation.toLowerCase()}.webp`}
+                  src={`https://flagpedia.net/data/flags/icon/16x12/${serverLocation.toLowerCase()}.webp`}
                   alt={serverLocation}
                 />
               </p>
