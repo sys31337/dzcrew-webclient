@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import config from "../../config.json";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -8,7 +9,6 @@ import { Link, useLocation } from "react-router-dom";
 
 import styles from "./navbar.module.css";
 import "../../index.css";
-require("dotenv").config();
 
 library.add(fas, far);
 
@@ -23,7 +23,6 @@ const Navbar = () => {
   const [sideIsOpen, setSideIsOpen] = useState(
     () => JSON.parse(localStorage.getItem("sidebar")) || false
   );
-  console.log(process.env.PORT)
   const [playersCount, setPlayersCount] = useState(0);
   const [serverLocation, setServerLocation] = useState("dz");
   const [serverResources, setServerResources] = useState(0);
@@ -32,7 +31,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     axios
-      .get(process.env.backendURL + "/auth/logout", {
+      .get(config.backendURL + "/auth/logout", {
         withCredentials: true,
       })
       .then((res) => {
@@ -42,12 +41,12 @@ const Navbar = () => {
       });
   };
   const handleLoginClick = () => {
-    window.location.href = `${process.env.backendURL}/auth`;
+    window.location.href = `${config.backendURL}/auth`;
   };
 
   useEffect(() => {
     axios
-      .get(process.env.backendURL + "/users/getUserData", { withCredentials: true })
+      .get(config.backendURL + "/users/getUserData", { withCredentials: true })
       .then((res) => {
         if (res.data.login) {
           if (localStorage.userData !== JSON.stringify(res.data)) {
@@ -60,7 +59,7 @@ const Navbar = () => {
         console.log(err);
       });
     axios
-      .get(process.env.backendURL + "/users/getServerRoles", {
+      .get(config.backendURL + "/users/getServerRoles", {
         withCredentials: true,
       })
       .then((res) => {
@@ -74,13 +73,13 @@ const Navbar = () => {
         console.log(err);
       });
 
-    axios.get(process.env.players).then((res) => {
+    axios.get(config.players).then((res) => {
       setPlayersCount(res.data.length);
     });
-    axios.get(`http://ip-api.com/json/${process.env.serverIP}`).then((res) => {
+    axios.get(`http://ip-api.com/json/${config.serverIP}`).then((res) => {
       setServerLocation(res.data.countryCode);
     });
-    axios.get(process.env.server).then((res) => {
+    axios.get(config.server).then((res) => {
       if (res.data) {
         setServerIsOnline(res.data.server.length > 0);
         setServerResources(res.data.resources.length);
