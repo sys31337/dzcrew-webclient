@@ -1,7 +1,7 @@
 {
-    "backendURL": "https://dzcrew-back.herokuapp.com/api",
+    "backendURL": "//dzcrew-back.herokuapp.com/api",
     "serverIP": "176.118.193.95",
-    "players" : "https://45.146.254.137/cc.php?players",
-    "server" : "https://45.146.254.137/cc.php?server",
+    "players" : "//45.146.254.137/cc.php?players",
+    "server" : "//45.146.254.137/cc.php?server",
     "banRole": "648253623071145984"
 }

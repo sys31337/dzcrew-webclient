@@ -76,7 +76,7 @@ const Navbar = () => {
     axios.get(config.players).then((res) => {
       setPlayersCount(res.data.length);
     });
-    axios.get(`http://ip-api.com/json/${config.serverIP}`).then((res) => {
+    axios.get(`//ip-api.com/json/${config.serverIP}`).then((res) => {
       setServerLocation(res.data.countryCode);
     });
     axios.get(config.server).then((res) => {
@@ -121,7 +121,7 @@ const Navbar = () => {
               <p>
                 Location:{" "}
                 <img
-                  src={`https://flagpedia.net/data/flags/icon/16x12/${serverLocation.toLowerCase()}.webp`}
+                  src={`//flagpedia.net/data/flags/icon/16x12/${serverLocation.toLowerCase()}.webp`}
                   alt={serverLocation}
                 />
               </p>
