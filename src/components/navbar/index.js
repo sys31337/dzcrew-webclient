@@ -76,7 +76,7 @@ const Navbar = () => {
     axios.get(config.players).then((res) => {
       setPlayersCount(res.data.length);
     });
-    axios.get(`http://ip-api.com/json/${config.serverIP}`).then((res) => {
+    axios.get(`https://ip-api.com/json/${config.serverIP}`).then((res) => {
       setServerLocation(res.data.countryCode);
     });
     axios.get(config.server).then((res) => {
