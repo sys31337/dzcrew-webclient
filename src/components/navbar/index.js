@@ -43,7 +43,7 @@ const Navbar = () => {
   const handleLoginClick = () => {
     window.location.href = `${config.backendURL}/auth`;
   };
-
+console.log(config.schema)
   useEffect(() => {
     axios
       .get(config.backendURL + "/users/getUserData", { withCredentials: true })
