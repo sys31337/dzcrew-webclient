@@ -72,17 +72,17 @@ const Navbar = () => {
         console.log(err);
       });
 
-    axios.get(config.players).then((res) => {
-      setPlayersCount(res.data.length);
+    fetch(config.players).then(res => res.json()).then((res) => {
+      setPlayersCount(res.length);
     });
-    axios.get(`http://ip-api.com/json/${config.serverIP}`).then((res) => {
-      setServerLocation(res.data.countryCode);
+    fetch(`http://ip-api.com/json/${config.serverIP}`).then(res => res.json()).then((res) => {
+      setServerLocation(res.countryCode);
     });
-    axios.get(config.server).then((res) => {
-      if (res.data) {
-        setServerIsOnline(res.data.server.length > 0);
-        setServerResources(res.data.resources.length);
-        setMaxPlayersCount(res.data.vars.sv_maxClients);
+    fetch(config.server).then(res => res.json()).then((res) => {
+      if (res) {
+        setServerIsOnline(res.server.length > 0);
+        setServerResources(res.resources.length);
+        setMaxPlayersCount(res.vars.sv_maxClients);
       }
     });
   }, []);
