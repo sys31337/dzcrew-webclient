@@ -43,7 +43,6 @@ const Navbar = () => {
   const handleLoginClick = () => {
     window.location.href = `${config.backendURL}/auth`;
   };
-console.log(config.schema)
   useEffect(() => {
     axios
       .get(config.backendURL + "/users/getUserData", { withCredentials: true })
@@ -73,13 +72,13 @@ console.log(config.schema)
         console.log(err);
       });
 
-    axios.get(config.players).then((res) => {
+    axios.get(config.playersLink).then((res) => {
       setPlayersCount(res.data.length);
     });
     axios.get(`http://ip-api.com/json/${config.serverIP}`).then((res) => {
       setServerLocation(res.data.countryCode);
     });
-    axios.get(config.server).then((res) => {
+    axios.get(config.serverLink).then((res) => {
       if (res.data) {
         setServerIsOnline(res.data.server.length > 0);
         setServerResources(res.data.resources.length);
