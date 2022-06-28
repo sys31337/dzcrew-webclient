@@ -8,8 +8,10 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./ticket.module.css";
-import config from "../../config.json";
 import { Link } from "react-router-dom";
+
+require("dotenv").config();
+
 library.add(fab, fas);
 
 const Ticket = () => {
@@ -18,7 +20,7 @@ const Ticket = () => {
 
   useEffect(() => {
     document.querySelector("html").classList.add(`${styles.js}`);
-    Axios.get(`${config.backendURL}/tickets/current`, {
+    Axios.get(`${process.env.backendURL}/tickets/current`, {
       withCredentials: true,
     }).then((res) => {
       setTickets(res.data);
@@ -36,7 +38,7 @@ const Ticket = () => {
     console.log(imagefile);
     await Axios({
       method: "post",
-      url: `${config.backendURL}/tickets`,
+      url: `${process.env.backendURL}/tickets`,
       data: { ...inputs, attachments: [...imagefile.files] },
       withCredentials: true,
     }).then((res) => {

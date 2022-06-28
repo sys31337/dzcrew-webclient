@@ -6,7 +6,7 @@ import moment from 'moment';
 
 import Layout from "../../components/layout";
 import styles from "./viewticket.module.css";
-import config from "../../config.json";
+require("dotenv").config();
 
 
 const ViewTicket = () => {
@@ -30,7 +30,7 @@ const ViewTicket = () => {
     };
 
     useEffect(() => {
-        Axios.get(`${config.backendURL}/tickets/${id}`, {
+        Axios.get(`${process.env.backendURL}/tickets/${id}`, {
             withCredentials: true,
         }).then((res) => {
             if (res.data) {
@@ -48,7 +48,7 @@ const ViewTicket = () => {
         console.log(data);
         await Axios({
             method: "PATCH",
-            url: `${config.backendURL}/tickets/${id}`,
+            url: `${process.env.backendURL}/tickets/${id}`,
             data,
             withCredentials: true,
         }).then((res) => {

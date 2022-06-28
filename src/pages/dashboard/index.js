@@ -6,7 +6,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import styles from "./dashboard.module.css";
-import config from "../../config.json";
+require("dotenv").config();
 
 library.add(fab, fas);
 
@@ -19,7 +19,7 @@ const Dashboard = () => {
   const playerRoles = serverRoles.filter((p) => roles.includes(p.roleId));
 
   useEffect(() => {
-    playerRoles.some((item) => item.roleId === config.banRole) &&
+    playerRoles.some((item) => item.roleId === process.env.banRole) &&
       setIsBanned(true);
   }, [playerRoles]);
 
