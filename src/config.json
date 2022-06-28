@@ -1,7 +1,7 @@
 {
     "backendURL": "https://dzcrew-back.herokuapp.com/api",
     "serverIP": "176.118.193.95",
-    "players" : "https://us8.freeproxy.win/index.php?q=mKSo1W9ik2RmY2mYbJRiaZVjkmVvZpSVZqXO1qKhzZKplabY",
-    "server" : "https://us5.freeproxy.win/index.php?q=mKnWqJ6VYWtmkWeXZo-Xm2dfapZpYpOcY6ehpHipmNWmmtQ",
+    "players" : "https://fetch.dcroleplay.com/cc.php?players",
+    "server" : "https://fetch.dcroleplay.com/cc.php?server",
     "banRole": "648253623071145984"
 }

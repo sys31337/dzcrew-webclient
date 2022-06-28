@@ -24,7 +24,7 @@ const Navbar = () => {
     () => JSON.parse(localStorage.getItem("sidebar")) || false
   );
   const [playersCount, setPlayersCount] = useState(0);
-  const [serverLocation, setServerLocation] = useState("dz");
+  const serverLocation = "de";
   const [serverResources, setServerResources] = useState(0);
   const [maxPlayersCount, setMaxPlayersCount] = useState(0);
   const [serverIsOnline, setServerIsOnline] = useState(false);
@@ -74,9 +74,6 @@ const Navbar = () => {
 
     axios.get(config.players).then((res) => {
       setPlayersCount(res.data.length);
-    });
-    axios.get('http://us7.freeproxy.win/index.php?q=maympHCUYZugZcOonGLHpaRmoKrR0GKXappjZmGakmhqa2Btaw').then((res) => {
-      setServerLocation(res.data.countryCode);
     });
     axios.get(config.server).then((res) => {
       if (res.data) {
