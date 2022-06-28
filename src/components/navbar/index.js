@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import config from "../../config.json";
 import axios from "axios";
+import https from "https";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -72,13 +73,21 @@ const Navbar = () => {
         console.log(err);
       });
 
-    axios.get(config.playersLink).then((res) => {
+    axios.get(config.players, {
+      httpsAgent: new https.Agent({
+        rejectUnauthorized: false,
+      }),
+    }).then((res) => {
       setPlayersCount(res.data.length);
     });
     axios.get(`http://ip-api.com/json/${config.serverIP}`).then((res) => {
       setServerLocation(res.data.countryCode);
     });
-    axios.get(config.serverLink).then((res) => {
+    axios.get(config.server, {
+      httpsAgent: new https.Agent({
+        rejectUnauthorized: false,
+      }),
+    }).then((res) => {
       if (res.data) {
         setServerIsOnline(res.data.server.length > 0);
         setServerResources(res.data.resources.length);
