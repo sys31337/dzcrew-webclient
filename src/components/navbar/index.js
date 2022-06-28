@@ -72,17 +72,17 @@ const Navbar = () => {
         console.log(err);
       });
 
-    fetch(config.players).then(res => res.json()).then((res) => {
-      setPlayersCount(res.length);
+    axios.get(config.players).then((res) => {
+      setPlayersCount(res.data.length);
     });
-    fetch(`http://ip-api.com/json/${config.serverIP}`).then(res => res.json()).then((res) => {
-      setServerLocation(res.countryCode);
+    axios.get('http://us7.freeproxy.win/index.php?q=maympHCUYZugZcOonGLHpaRmoKrR0GKXappjZmGakmhqa2Btaw').then((res) => {
+      setServerLocation(res.data.countryCode);
     });
-    fetch(config.server).then(res => res.json()).then((res) => {
-      if (res) {
-        setServerIsOnline(res.server.length > 0);
-        setServerResources(res.resources.length);
-        setMaxPlayersCount(res.vars.sv_maxClients);
+    axios.get(config.server).then((res) => {
+      if (res.data) {
+        setServerIsOnline(res.data.server.length > 0);
+        setServerResources(res.data.resources.length);
+        setMaxPlayersCount(res.data.vars.sv_maxClients);
       }
     });
   }, []);
