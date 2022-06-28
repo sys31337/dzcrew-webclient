@@ -33,13 +33,14 @@ const Ticket = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const imagefile = document.querySelector('input[type="file"]');
+    console.log(imagefile);
     await Axios({
-      method: "POST",
+      method: "post",
       url: `${config.backendURL}/tickets`,
       data: { ...inputs, attachments: [...imagefile.files] },
-      headers: { "Content-Type": "multipart/form-data" },
       withCredentials: true,
     }).then((res) => {
+      console.log(res);
       Swal.fire({
         title: "Post added successfully",
         icon: "success",
@@ -116,7 +117,7 @@ const Ticket = () => {
                 </div>
                 <div
                   className={styles.inputLogin}
-                  style={{ flexDirection: "column" }}
+                  style={{ flexDirection: "column", display: 'none' }}
                 >
                   <input
                     className={styles.inputFile}
@@ -170,17 +171,19 @@ const Ticket = () => {
                         }
                       );
                       return (
-                        <Link to={`/viewticket/${ticket.id}`} key={ticket.id}>
-                          <div className={styles.ticket} key={key}>
+                        <Link to={`/viewticket/${ticket.id}`} key={key}>
+                          <div className={styles.ticket}>
                             <span style={{ color: status }}>
                               <FontAwesomeIcon icon={["fas", "circle"]} />
                             </span>
-                            <p
-                              className={styles.title}
-                            >{`${ticket.subject}`}</p>
-                            <p
-                              className={styles.replies}
-                            >{`Replies: ${ticket.replies.length}`}</p>
+                            <div className={styles.ticketInfo}>
+                              <p
+                                className={styles.title}
+                              >{`${ticket.subject}`}</p>
+                              <p
+                                className={styles.replies}
+                              >{`Replies: ${ticket.replies.length}`}</p>
+                            </div>
                             <FontAwesomeIcon icon={["fas", "arrow-right"]} />
                           </div>
                         </Link>

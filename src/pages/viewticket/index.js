@@ -45,11 +45,11 @@ const ViewTicket = () => {
     const submitReply = async (e) => {
         e.preventDefault();
         const data = inputs;
+        console.log(data);
         await Axios({
             method: "PATCH",
             url: `${config.backendURL}/tickets/${id}`,
             data,
-            headers: { "Content-Type": "multipart/form-data" },
             withCredentials: true,
         }).then((res) => {
             setRefreshData(!refreshData);
@@ -58,7 +58,7 @@ const ViewTicket = () => {
                 icon: "success",
                 confirmButtonText: "Ok",
             }).then((result) => {
-                if (result.isConfirmed) {
+                if (result.isConfirmed && !inputs.close) {
                     document.getElementsByTagName("form")[0].reset();
                 }
             });

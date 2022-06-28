@@ -9,29 +9,29 @@ const Form = () => {
     const [inputs, setInputs] = useState({});
 
     useEffect(() => {
-        document.querySelector("html").classList.add('js');
+        // document.querySelector("html").classList.add('js');
 
-        const fileInput = document.querySelector(".input-file"),
-            button = document.querySelector(".input-file-trigger"),
-            the_return = document.querySelector(".file-return");
+        // const fileInput = document.querySelector(".input-file"),
+        //     button = document.querySelector(".input-file-trigger"),
+        //     the_return = document.querySelector(".file-return");
 
-        button.addEventListener("keydown", function (event) {
-            if (event.keyCode === 13 || event.keyCode === 32) {
-                fileInput.focus();
-            }
-        });
-        button.addEventListener("click", function (event) {
-            fileInput.focus();
-            return false;
-        });
-        fileInput.addEventListener("change", function (event) {
-            var filesList = ''
-            Array.from(this.files).forEach(file => {
-                filesList += `<li class="uploaded-item">${file.name}</li>`;
-            });
-            the_return.innerHTML = filesList;
+        // button.addEventListener("keydown", function (event) {
+        //     if (event.keyCode === 13 || event.keyCode === 32) {
+        //         fileInput.focus();
+        //     }
+        // });
+        // button.addEventListener("click", function (event) {
+        //     fileInput.focus();
+        //     return false;
+        // });
+        // fileInput.addEventListener("change", function (event) {
+        //     var filesList = ''
+        //     Array.from(this.files).forEach(file => {
+        //         filesList += `<li class="uploaded-item">${file.name}</li>`;
+        //     });
+        //     the_return.innerHTML = filesList;
 
-        });
+        // });
     }, [])
 
     const handleChange = (event) => {
@@ -99,9 +99,9 @@ const Form = () => {
                                 placeholder="Content">
                             </textarea>
                         </div><br />
-                        <div className="input-login" style={{ flexDirection: 'column' }}>
+                        <div className="input-login" style={{ flexDirection: 'column', display: 'none' }}>
                             <div className="input-file-container">
-                                <input className="input-file" id="my-file" name="attachments" type="file" multiple />
+                                <input className="input-file" disabled id="my-file" name="attachments" type="file" multiple />
                                 <label tabIndex="0" htmlFor="my-file" className="input-file-trigger">Attach files...</label>
                             </div>
                         </div><br />

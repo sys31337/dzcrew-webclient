@@ -13,6 +13,10 @@
   --color-main: #d39d2a;
   --color-main2: #a47000;
   --color-salmon: #F32C52;
+  --color-flower: #FE8CDF;
+  --color-discord: #7289da;
+  --color-success: #008c41;
+  --color-danger: #f00048;
   --color-sun: #feee7d;
   --color-alge: #7999a9;
   --color-flower: #353866;
@@ -32,6 +36,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+main {
+  padding-bottom: 100px;
 }
 
 .badge,

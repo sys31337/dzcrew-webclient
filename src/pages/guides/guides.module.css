@@ -1,0 +1,94 @@
+.background {
+    background: url('https://images.alphacoders.com/563/563020.jpg');
+    width: 100vw;
+    height: 100vh;
+    opacity: .1;
+    position: fixed;
+    z-index: -999;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    text-align: center;
+    color: #fff;
+}
+
+.title {
+    font-smooth: auto;
+    padding-top: 80px;
+    font-family: 'Whitney', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    font-size: 40px
+}
+
+.step {
+    font-smooth: auto;
+    font-family: 'Whitney', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    font-size: 22px;
+    opacity: 0.8
+}
+
+.link {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Whitney', sans-serif;
+    font-size: 13px;
+    opacity: 0.8;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    border-radius: 100px;
+}
+
+.link:hover {
+    opacity: 1;
+}
+
+.instructions {
+    font-smooth: auto;
+    font-family: 'Whitney', sans-serif;
+    font-weight: 650;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 16px;
+}
+
+.highlight {
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    opacity: 1;
+    border-radius: 2px;
+    padding: 0 5px;
+    color: #fff
+}
+
+.highlight:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.bottom-wrapper {
+    width: 100%;
+    background: #2C2F33;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.wsite {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Whitney', sans-serif;
+    font-size: 18px;
+    opacity: 0.5;
+    transition: all 100ms ease
+}
+
+.bottom-wrapper:hover .wsite {
+    opacity: 0.8
+}

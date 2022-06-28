@@ -73,7 +73,7 @@ const Dashboard = () => {
               </ul>
             </section>
           </section>
-          <section className={styles.statistics}>
+          <section className={styles.statistics} style={{display: 'none'}}>
             <p>
               <strong>29</strong> Followers
             </p>
