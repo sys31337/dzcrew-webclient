@@ -153,17 +153,10 @@ const Navbar = () => {
             </Link>
           </li>
           <li className={styles.navItem}>
-            <Link
-              to="/forum"
-              className={
-                router.pathname === "/forum"
-                  ? `${styles.navLink} ${styles.active}`
-                  : `${styles.navLink}`
-              }
-            >
+            <a href="https://forum.dcroleplay.com">
               <FontAwesomeIcon icon="fa-solid fa-list" size="lg" />
               <span className={styles.linkText}>Forum</span>
-            </Link>
+            </a>
           </li>
           <li className={styles.navItem}>
             <Link

@@ -7,7 +7,6 @@ import ViewTicket from "./pages/viewticket";
 import Dashboard from "./pages/dashboard";
 import Rules from "./pages/rules";
 import Guides from "./pages/guides";
-import Form from "./pages/form";
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/rules" element={<Rules />} />
           <Route path="/guides" element={<Guides />} />
-          <Route path="/form" element={<Form />} />
           <Route path="/viewticket/:id" element={<ViewTicket />} />
           <Route path="*" element={<Error />} />
         </Routes>
