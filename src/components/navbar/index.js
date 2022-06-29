@@ -153,7 +153,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className={styles.navItem}>
-            <a href="https://forum.dcroleplay.com">
+            <a className={styles.navLink} href="https://forum.dcroleplay.com">
               <FontAwesomeIcon icon="fa-solid fa-list" size="lg" />
               <span className={styles.linkText}>Forum</span>
             </a>
