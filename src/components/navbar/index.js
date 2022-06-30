@@ -32,7 +32,7 @@ const Navbar = () => {
   const handleLogout = () => {
     axios
       .get(config.backendURL + "/auth/logout", {
-        withCredentials: true,
+        withCredentials: true
       })
       .then((res) => {
         setIsLogged(false);
@@ -45,7 +45,7 @@ const Navbar = () => {
   };
   useEffect(() => {
     axios
-      .get(config.backendURL + "/users/getUserData", { withCredentials: true })
+      .get(`${config.backendURL}/users/getUserData`, { withCredentials: true, crossDomain: true })
       .then((res) => {
         if (res.data.login) {
           if (localStorage.userData !== JSON.stringify(res.data)) {
