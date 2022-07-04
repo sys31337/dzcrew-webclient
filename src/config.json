@@ -1,5 +1,5 @@
 {
-    "backendURL": "https://fetch.dcroleplay.com",
+    "backendURL": "https://fetch.dcroleplay.com/api",
     "serverIP": "176.118.193.95",
     "players" : "https://fetch.dcroleplay.com/cc.php?players",
     "server" : "https://fetch.dcroleplay.com/cc.php?server",
