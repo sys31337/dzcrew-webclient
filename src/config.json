@@ -1,5 +1,5 @@
 {
-    "backendURL": "https://dzcrew-back.herokuapp.com/api",
+    "backendURL": "https://fetch.dcroleplay.com",
     "serverIP": "176.118.193.95",
     "players" : "https://fetch.dcroleplay.com/cc.php?players",
     "server" : "https://fetch.dcroleplay.com/cc.php?server",
