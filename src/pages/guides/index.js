@@ -19,9 +19,8 @@ const Guides = () => {
         <div className={styles.background}></div>
         <div className={styles.content}>
           <div className={styles.title}>How to join DzCrew RolePlay Server</div>
-          <div style={{ height: "20px" }}></div>
 
-          <div style={{ height: "70px" }}></div>
+          <div style={{ height: "20px" }}></div>
           <div className={styles.step}>Step 1 الخطوة</div>
           <div className={styles.instructions}>Join our discord server</div>
           <div style={{ height: "20px" }}></div>
@@ -29,7 +28,7 @@ const Guides = () => {
             JOIN
           </a>
 
-          <div style={{ height: "70px" }}></div>
+          <div style={{ height: "20px" }}></div>
           <div className={styles.step}>Step 2 الخطوة</div>
           <div className={styles.instructions}>Read the rules</div>
           <div style={{ height: "20px" }}></div>
@@ -37,14 +36,14 @@ const Guides = () => {
             RULES
           </a>
 
-          <div style={{ height: "70px" }}></div>
+          <div style={{ height: "20px" }}></div>
           <div className={styles.step}>Step 3 الخطوة</div>
           <div className={styles.instructions}>
             Join
             <div className={styles.highlight}>#غرفة إنتظار المقابلة</div> room
             on discord.
           </div>
-          <div style={{ height: "70px" }}></div>
+          <div style={{ height: "20px" }}></div>
           <h3>After getting whitelisted, Follow this steps:</h3>
           <div className={styles.step}>Step 1 الخطوة</div>
           <div className={styles.instructions}>
