@@ -71,7 +71,7 @@ const ArabicRules = () => {
                   <li><strong>Server/السيرفر: </strong>المدينة</li>
                   <li><strong>Chat: </strong>الجريدة الرسمية</li>
                   <li><strong>Server restart: </strong>إعصار</li>
-                  <li><strong>ID: </strong>CCP</li>
+                  <li><strong>الآي دي: </strong>CCP</li>
                   <h2>مصطلحات</h2>
                   <li>
                     <p>
