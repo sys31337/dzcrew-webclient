@@ -60,6 +60,19 @@ const ArabicRules = () => {
                   يُسمح بأي مما يلي في Dz-Crew RP.
                 </p>
                 <ul className={styles.rules}>
+                  <h2>كلمات</h2>
+                  <li><strong>Lags/لاج: </strong>صداع</li>
+                  <li><strong>Microphone/ميكروفون: </strong>الأحبال الصوتية / الحنجرة</li>
+                  <li><strong>Discord/الديسكورد: </strong>راديو</li>
+                  <li><strong>Disconnect/نقفل: </strong>افصل مخي</li>
+                  <li><strong>Ban/بان: </strong>رحلة</li>
+                  <li><strong>Glitch/جليتش: </strong>سحر أسود</li>
+                  <li><strong>Button/زر: </strong>عظلة</li>
+                  <li><strong>Server/السيرفر: </strong>المدينة</li>
+                  <li><strong>Chat: </strong>الجريدة الرسمية</li>
+                  <li><strong>Server restart: </strong>إعصار</li>
+                  <li><strong>ID: </strong>CCP</li>
+                  <h2>مصطلحات</h2>
                   <li>
                     <p>
                       <strong>Powergaming: </strong>يحظر على شخصيتك فعل أي شيء

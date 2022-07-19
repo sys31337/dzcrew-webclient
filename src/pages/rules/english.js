@@ -62,6 +62,19 @@ const EnglishRules = () => {
                   within Dz-Crew RP.
                 </p>
                 <ul className={styles.rules}>
+                  <h2>Words</h2>
+                  <li><strong>Lags: </strong>Headache</li>
+                  <li><strong>Microphone: </strong>Vocal Cords</li>
+                  <li><strong>Discord: </strong>Radio</li>
+                  <li><strong>Disconnect: </strong>Take a break</li>
+                  <li><strong>Ban: </strong>Vacation</li>
+                  <li><strong>Glitch: </strong>Black Magic</li>
+                  <li><strong>Button: </strong>Muscle</li>
+                  <li><strong>Server: </strong>City</li>
+                  <li><strong>Chat: </strong>Newspaper</li>
+                  <li><strong>Server restart: </strong>Storm</li>
+                  <li><strong>ID: </strong>CCP</li>
+                  <h2>Definitions</h2>
                   <li>
                     <p>
                       <strong>Powergaming: </strong>Your character (IC) is
