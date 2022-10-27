@@ -14,7 +14,7 @@ const InGameEn = () => {
         <li>Do unrealistic car jumping</li>
         <li>Misuse expensive vehicles</li>
         <li>Use work vehicles for other purpose</li>
-        <li>Submerge any vehicle in water intentionally</li>
+        <li>Do notSubmerge any vehicle in water intentionally</li>
         <li>
           Swim for an unrealistic amount of time in a chase (more than 5
           minutes)
@@ -72,12 +72,18 @@ const InGameEn = () => {
           </span>
           {` Drive at unrealistic speeds with no character reason over and over.`}
         </li>
+        <li>
+          <span style={{ color: "red" }}>
+            <strong>{`Do Not `}</strong>
+          </span>
+          {`Submerge any vehicle in water intentionally`}
+        </li>
         <li>{`If you are downed and respawn at the hospital your character forgets the immediate events leading up to being downed in the current scenario.`}</li>
         <li>{`You must try and contact medical help of some sort while incapacitated.`}</li>
-        <li>{`Not realistically fearing for your life when you are threatened with weapons or severe harm from other means.`}</li>
+        <li>{`You have to fear for your life when you are threatened with weapons or severe harm from other means.`}</li>
         <li>{`Roleplay shouldn’t be stopped or become less serious before a restart; it should continue as normal.`}</li>
         <li>{`Each player have to respect all the law enforcement ( Police , Army , gov...etc)`}</li>
-        <li>{`Submerge any vehicle in water intentionally`}</li>
+        <li></li>
 
         <li>
           {`Dont do Any crime in the safezone , `}
