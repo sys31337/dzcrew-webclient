@@ -293,40 +293,7 @@ const CriminalRulesEn = () => {
           threats before using it.
         </li>
       </ul>
-      <h3>
-        <strong>
-          <span>Kidnapping and Robbing</span>
-        </strong>
-        💀 <strong>:</strong>
-      </h3>
-      <ul>
-        <li>There must be at least 3 policemen online to kidnap a citizen.</li>
-        <li>You cannot steal more than $1000 from a player.</li>
-        <li>It is forbidden to kidnap everyone you meet for no reason.</li>
-        <li>You cannot take someone to a bank/ATM to withdraw money.</li>
-        <li>
-          It is forbidden to return to the place where you have already
-          kidnapped someone knowing that there are people who may have called
-          the police.
-        </li>
-        <li>
-          You cannot hold a hostage for longer than 30 minutes, this is
-          discouraging and unfair.
-        </li>
-        <li>
-          There must be at least 4 policemen online to kidnap a police officer,
-          you are not allowed to loot their items (set aside handcuffs and
-          ammos)
-        </li>
-        <li>
-          <span>
-            <span>
-              Taking a police officer as a hostage is only permitted as a last
-              resort.
-            </span>
-          </span>
-        </li>
-      </ul>
+
       <h3>
         <strong>
           <span>Carry a dead person</span>
