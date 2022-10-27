@@ -52,6 +52,7 @@ const ServerRulesEn = () => {
           you should not drive through the city at excessive speed as this would
           be severely endangering your life for no real purpose.
         </li>
+        <li>it is forbidden to be idle/ AFK in server for long period</li>
       </ol>
     </section>
   )
