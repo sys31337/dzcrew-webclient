@@ -157,6 +157,7 @@ const CriminalRulesAr = () => {
       </h3>
 
       <ul>
+        <li>الحد الاقصى لسرقة محل المجوهرات هو 4 اشخاص</li>
         <li>سرقة محل مجوهرات.</li>
         <li>على كل الافراد التواجد داخل المحل.</li>
         <li>يمكن أن تأخذ 3 رهائن كحد أقصى.</li>
@@ -168,6 +169,7 @@ const CriminalRulesAr = () => {
           نظرا لعدم تواجد أي مواطن في خطر.
         </li>
         <li>لا يمكن أن تكون الرهينة من أصدقائك مهما كانت الاحوال.</li>
+        <li>الحد الاقصى للسيارات في عملية سرقة المجوهرات هو 2</li>
       </ul>
       <h3>
         <strong>
@@ -222,13 +224,13 @@ const CriminalRulesAr = () => {
       <ul>
         <li>
           <strong>الفئة 1 :</strong> FN .45 - M9 - 1911 - Pistol - Pistol MK2 -
-          Combat Pistol - Heavy Pistol - SNS-Pistol.
+          Combat Pistol - Heavy Pistol - Vintage Pistol - SNS-Pistol.
         </li>
         <li>
           <strong>الفئة 2 :</strong> Desert Eagle - Mac-10 - Uzi - Mossberg -
-          Remington - AP-Pistol - Desert Eagle - Vintage Pistol- Marksman Pistol
-          - Revolver - Micro-SMG - Machine Pistol - SMG - SMG MK2 - Assault SMG
-          - Combat PDW - Mini SMG - Pumpshotgun - Sawnoff Shotgun - Autoshotgun.
+          Remington - AP-Pistol - Desert Eagle - Marksman Pistol - Revolver -
+          Micro-SMG - Machine Pistol - SMG - SMG MK2 - Assault SMG - Combat PDW
+          - Mini SMG - Pumpshotgun - Sawnoff Shotgun - Autoshotgun.
         </li>
         <li>
           <strong>الفئة 3 :</strong> M4 - Hunting Rifle- AK-47 - AR-15 - m70 -

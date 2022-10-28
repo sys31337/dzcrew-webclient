@@ -169,7 +169,7 @@ const CriminalRulesEn = () => {
       </h3>
 
       <ul>
-        <li>The maximum number of members in the house robbery is 4 people.</li>
+        <li>The maximum number of members is 4 people.</li>
         <li>All members of the robbery must be inside the jewelry.</li>
         <li>No more than three hostages can be taken in the robbery.</li>
         <li>If you start a robbery you must complete it.</li>
@@ -179,6 +179,7 @@ const CriminalRulesEn = () => {
           there is no one in immediate danger.
         </li>
         <li>You cannot use a friend as a hostage in any situation.</li>
+        <li>The maximum number of cars is 2.</li>
       </ul>
       <h3>
         <strong>
@@ -240,13 +241,13 @@ const CriminalRulesEn = () => {
       <ul>
         <li>
           <strong>CLASS 1 :</strong> FN .45 - M9 - 1911 - Pistol - Pistol MK2 -
-          Combat Pistol - Heavy Pistol - SNS-Pistol.
+          Combat Pistol - Heavy Pistol - Vintage Pistol - SNS-Pistol.
         </li>
         <li>
           <strong>CLASS 2 :</strong> Desert Eagle - Mac-10 - Uzi - Mossberg -
-          Remington - AP-Pistol - Desert Eagle - Vintage Pistol- Marksman Pistol
-          - Revolver - Micro-SMG - Machine Pistol - SMG - SMG MK2 - Assault SMG
-          - Combat PDW - Mini SMG - Pumpshotgun - Sawnoff Shotgun - Autoshotgun.
+          Remington - AP-Pistol - Desert Eagle - Marksman Pistol - Revolver -
+          Micro-SMG - Machine Pistol - SMG - SMG MK2 - Assault SMG - Combat PDW
+          - Mini SMG - Pumpshotgun - Sawnoff Shotgun - Autoshotgun.
         </li>
         <li>
           <strong>CLASS 3 :</strong> M4 - Hunting Rifle- AK-47 - AR-15 - m70 -
