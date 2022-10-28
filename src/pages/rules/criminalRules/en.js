@@ -173,6 +173,7 @@ const CriminalRulesEn = () => {
         <li>All members of the robbery must be inside the jewelry.</li>
         <li>No more than three hostages can be taken in the robbery.</li>
         <li>If you start a robbery you must complete it.</li>
+        <li>⚠️ Could only be robbed once per 24 hours.</li>
         <li>
           If you do not have a hostage, prepare to be attacked by police sence
           there is no one in immediate danger.
