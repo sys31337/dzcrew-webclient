@@ -161,20 +161,7 @@ const CriminalRulesEn = () => {
         <li>Only one hostage can be taken in the robbery.</li>
         <li>You cannot use a friend as a hostage in any situation.</li>
       </ul>
-
-      <h3>
-        <strong>
-          <span>Atm Robbery</span>
-        </strong>
-        💎 <strong>:</strong>
-      </h3>
-
-      <ul>
-        <li>The maximum number of members in this robbery is 2 people</li>
-        <li>Allowed for Citizens</li>
-        <li>Could only be robbed once per day</li>
-      </ul>
-
+      
       <h3>
         <strong>
           <span>Truck Robbery mission</span>
@@ -198,6 +185,20 @@ const CriminalRulesEn = () => {
           jewellery...etc).
         </li>
       </ul>
+
+      <h3>
+        <strong>
+          <span>Atm Robbery</span>
+        </strong>
+        🏧 <strong>:</strong>
+      </h3>
+
+      <ul>
+        <li>The maximum number of members in this robbery is 2 people</li>
+        <li>Allowed for Citizens</li>
+        <li>Could only be robbed once per day</li>
+      </ul>
+
 
       <h3>
         <strong>

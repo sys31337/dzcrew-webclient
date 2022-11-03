@@ -154,7 +154,7 @@ const CriminalRulesAr = () => {
         <strong>
           <span>مهمة سرقة الشاحنة</span>
         </strong>
-        💎 <strong>:</strong>
+        🚚 <strong>:</strong>
       </h3>
 
       <ul>
@@ -176,7 +176,7 @@ const CriminalRulesAr = () => {
         <strong>
           <span>مهمة سرقة موزع النقود الألي</span>
         </strong>
-        💎 <strong>:</strong>
+        🏧 <strong>:</strong>
       </h3>
 
       <ul>
