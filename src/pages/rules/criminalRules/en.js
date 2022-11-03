@@ -161,6 +161,44 @@ const CriminalRulesEn = () => {
         <li>Only one hostage can be taken in the robbery.</li>
         <li>You cannot use a friend as a hostage in any situation.</li>
       </ul>
+
+      <h3>
+        <strong>
+          <span>Atm Robbery</span>
+        </strong>
+        💎 <strong>:</strong>
+      </h3>
+
+      <ul>
+        <li>The maximum number of members in this robbery is 2 people</li>
+        <li>Allowed for Citizens</li>
+        <li>Could only be robbed once per day</li>
+      </ul>
+
+      <h3>
+        <strong>
+          <span>Truck Robbery mission</span>
+        </strong>
+        💎 <strong>:</strong>
+      </h3>
+
+      <ul>
+        <li>You must be a gang member to take part in the mission.</li>
+        <li>A maximum of 3 gang members in the mission.</li>
+        <li>A fixed number of 5 policemen.</li>
+        <li>
+          Only pistols are authorised and every member must have his own pistol.
+        </li>
+        <li>
+          Every gang can do the robbery only once a day ! (The day counts from
+          00h00 to 23h59).
+        </li>
+        <li>
+          The robbery doesn't prevent you from doing other robberies (bank,
+          jewellery...etc).
+        </li>
+      </ul>
+
       <h3>
         <strong>
           <span>Jewelry Robbery</span>
@@ -181,6 +219,7 @@ const CriminalRulesEn = () => {
         <li>You cannot use a friend as a hostage in any situation.</li>
         <li>The maximum number of cars is 2.</li>
       </ul>
+
       <h3>
         <strong>
           <span>Bank Robbery</span>
